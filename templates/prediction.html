@@ -35,7 +35,7 @@
   }
 </style>
 
- <body background="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Indian_Premier_League_Official_Logo.svg/1200px-Indian_Premier_League_Official_Logo.svg.png?width=1280&height=720" class='foreground'>
+ <body background="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Indian_Premier_League_Official_Logo.svg/1200px-Indian_Premier_League_Official_Logo.svg.png?width=1280&height=720" class='foreground' background-repeat='no-repeat' background-size='cover' background-position='center' background-attachment='fixed'>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="/">IPL Winner Prediction</a>
@@ -47,10 +47,14 @@
     <div class='parallax'>
     <font color="Blue">
     </br>
-    <h2 style="background-color:Yellow;">Predicted Match Winner:</h2>
+    <h2 style="background-color:Yellow;">&nbsp;&nbsp;Predicted Match Winner:</h2>
     <font color="Blue">
-    <div><h3 style="background-color:Yellow;">The predicted winning team is: <strong>{{ prediction }}</strong>.</h3></div>
+    <div><h3 style="background-color:Yellow;">&nbsp;&nbsp;Predicted winning team is: <strong>{{ prediction }}</strong>.</h3></div>
     </br>
-    <button onclick="goBack()">Go Back</button>
- </body>
+       
+    <h3><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button onclick="goBack()" style="background-color:Purple;color:Pink">
+        <strong>&nbsp;Go back to input page!&nbsp;</strong>
+    </button></h3>
+  </body>
 </html>

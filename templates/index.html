@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title style="background-color:DodgerBlue;">IPL Matches Winner Prediction</title>
+<style>
+
+  @media only screen and (max-device-width: 1280px ) {
+  .parallax {
+    /* The image used */
+    background-image: url();
+
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .foreground {
+      backdrop-filter: blur(5px);
+    }
+  
+  }
+</style>
+</head>
+
+<body background="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Indian_Premier_League_Official_Logo.svg/1200px-Indian_Premier_League_Official_Logo.svg.png?width=1280&height=720" class='foreground'>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">IPL Winner Prediction</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+<div class='parallax'>
+<font color="Brown">
+<form action="/submit" method='POST'>
+
+<h3><br> &nbsp;&nbsp; Season :&nbsp; 
+    <select id="Season" name="yr">
+    <option value='2020'>2020</option>
+    </select>
+  </h3>
+
+<h3> &nbsp;&nbsp; Team 1 :&nbsp; 
+    <select id="Team 1" name="tm1">
+    <option value='2'>Chennai Super Kings</option>
+    <option value='8'>Delhi Capitals</option>
+    <option value='5'>Kings XI Punjab</option>
+    <option value='3'>Kolkata Knight Riders</option>
+    <option value='1'>Mumbai Indians</option>
+    <option value='6'>Rajasthan Royals</option>
+    <option value='4'>Royal Challengers Bangalore</option>
+    <option value='7'>Sunrisers Hyderabad</option>
+  </select></h3>
+
+<h3> &nbsp;&nbsp; Team 2 :&nbsp;
+    <select id="Team 2" name="tm2">
+    <option value='2'>Chennai Super Kings</option>
+    <option value='8'>Delhi Capitals</option>
+    <option value='5'>Kings XI Punjab</option>
+    <option value='3'>Kolkata Knight Riders</option>
+    <option value='1'>Mumbai Indians</option>
+    <option value='6'>Rajasthan Royals</option>
+    <option value='4'>Royal Challengers Bangalore</option>
+    <option value='7'>Sunrisers Hyderabad</option>
+  </select></h3>
+
+<h3> &nbsp;&nbsp; City :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <select id="City" name="city">
+    <option value='1'>Abu Dhabi</option>
+    <option value='14'>Dubai</option>
+    <option value='34'>Sharjah</option>
+  </select></h3>
+
+<h3> &nbsp;&nbsp; Toss Decision :&nbsp; 
+    <select id="Toss" name="td">
+    <option value=1>Field</option>
+    <option value=0>Bat</option>
+  </select></h3>
+
+<h3> &nbsp;&nbsp; Toss Winner :&nbsp;
+    <select id="Toss Win" name="tw">
+    <option value='tm1'>Team 1</option>
+    <option value='tm2'>Team 2</option>
+  </select></h3>
+
+
+<h3><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="submit" style="background-color:Purple;color:Pink">
+    <strong>&nbsp;Click here for Prediction !&nbsp;</strong>
+  </button></h3>
+<br>
+</div>
+</form>
+&nbsp;&nbsp;Site created by Abhinava
+
+</font>
+</body>
+</html>

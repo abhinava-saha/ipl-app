@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title style="background-color:DodgerBlue;"> IPL Winner Prediction Result </title>
+
+ <script>
+    function goBack() {
+    window.history.back()
+    }
+ </script>
+ </head>
+
+ <style>
+
+  @media only screen and (max-device-width: 1280px) {
+  .parallax {
+    /* The image used */
+    background-image: url();
+
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .foreground {
+      backdrop-filter: blur(5px);
+    }
+  
+  }
+</style>
+
+ <body background="https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Indian_Premier_League_Official_Logo.svg/1200px-Indian_Premier_League_Official_Logo.svg.png?width=1280&height=720" class='foreground'>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">IPL Winner Prediction</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+
+    <div class='parallax'>
+    <font color="Blue">
+    </br>
+    <h2 style="background-color:Yellow;">Predicted Match Winner:</h2>
+    <font color="Blue">
+    <div><h3 style="background-color:Yellow;">The predicted winning team is: <strong>{{ prediction }}</strong>.</h3></div>
+    </br>
+    <button onclick="goBack()">Go Back</button>
+ </body>
+</html>

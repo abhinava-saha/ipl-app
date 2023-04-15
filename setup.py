@@ -16,7 +16,7 @@ def get_requirements(file_path:str)->List['str']:
     return requirements
 
 setup(
-name='studmarks',
+name='ipl-winner-prediction',
 version='0.0.1',
 author='abhinava-saha',
 author_email='abhinava.saha@outlook.com',

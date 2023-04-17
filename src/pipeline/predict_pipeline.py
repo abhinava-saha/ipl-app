@@ -22,11 +22,14 @@ class PredictPipeline:
             preds = model.predict(self.pred_df)
 
             teamname = {1: 'Mumbai Indians', 2: 'Chennai Super Kings', 3: 'Kolkata Knight Riders', 4: 'Royal Challengers Bangalore',
-                        5: 'Kings XI Punjab', 6: 'Rajasthan Royals', 7: 'Sunrisers Hyderabad', 8: 'Delhi Capitals'}
+                        5: 'Punjab Kings', 6: 'Rajasthan Royals', 7: 'Sunrisers Hyderabad', 8: 'Delhi Capitals', 9: 'Gujarat Titans', 10: 'Lucknow Super Giants'}
 
             if (preds[0] == int(self.pred_df['team1'][0])) or (preds[0] == int(self.pred_df['team2'][0] )):
                 preds = teamname[preds[0]]
+                
             else:
+                print(
+                    f"Prediction is {teamname[preds[0]]}, while Team1: {teamname[self.pred_df['team1'][0]]} and Team2:{teamname[self.pred_df['team2'][0]]}. Prediction defaulted to Team2")
                 preds = int(self.pred_df['team2'][0] )
                 preds = teamname[preds] + ' '
             
@@ -57,8 +60,11 @@ class CustomData:
         else:
             self.toss_win = team2
         
-        venue_dict = {'1': 35, '14': 7, '34': 34}
+        # MAP City to Venue internally
+        # print(f"city selected is {self.city}")
+        venue_dict = {'1':19, '2':16, '6':24, '7':17, '9':10, '10':12, '14':2, '15':25, '17':28, '22':9, '23':3, '24':35, '26':7}
         self.venue = venue_dict[self.city]
+        # print(f"venue lookedup is {self.venue}")
 
 # arr = np.array([[season, team1, team2, city, toss, toss_win, venue]]
     def get_data_as_data_frame(self):

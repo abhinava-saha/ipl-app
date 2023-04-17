@@ -28,8 +28,7 @@ class PredictPipeline:
                 preds = teamname[preds[0]]
                 
             else:
-                print(
-                    f"Prediction is {teamname[preds[0]]}, while Team1: {teamname[self.pred_df['team1'][0]]} and Team2:{teamname[self.pred_df['team2'][0]]}. Prediction defaulted to Team2")
+              #  print( f"Prediction is {teamname[preds[0]]}, while Team1: {teamname[self.pred_df['team1'][0]]} and Team2:{teamname[self.pred_df['team2'][0]]}. Prediction defaulted to Team2")
                 preds = int(self.pred_df['team2'][0] )
                 preds = teamname[preds] + ' '
             

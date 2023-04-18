@@ -35,7 +35,7 @@ def predict_datapoint():
 
         pred_df = data.get_data_as_data_frame()
         print(pred_df)
-        print("Before Prediction check")
+#        print("Before Prediction check")
 #   [[season, team1, team2, city, toss, toss_win, venue]]
 
         if pred_df['team1'][0] == pred_df['team2'][0]:
@@ -45,11 +45,10 @@ def predict_datapoint():
             
 
         predict_pipeline = PredictPipeline()
-        print("Mid Prediction")
-        pred_winner = predict_pipeline.predict(pred_df)
-        print(f"Predicted winner is: {pred_winner}")
-        return render_template('prediction.html', prediction=pred_winner)
-
+        print("Going for prediction to PredictPipeline")
+        pred_code, pred_winner = predict_pipeline.predict(pred_df)
+        print(f"Predicted winner is: {pred_winner}, html results page being rendered next.")
+        return render_template('prediction.html', prediction=pred_winner, prediction_code=pred_code)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=False)

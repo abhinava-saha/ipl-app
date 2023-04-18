@@ -1,6 +1,7 @@
 import sys
 import os
 import pandas as pd
+import numpy as np
 from src.exception import CustomException
 from src.utils import load_object
 
@@ -13,27 +14,28 @@ class PredictPipeline:
         try:
             model_path = os.path.join("artifacts", "iplmodel.pkl")
 #            preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
-            print("Before Loading")
+            print("Before Loading Model pickle file")
             model = load_object(file_path=model_path)
 #            preprocessor = load_object(file_path=preprocessor_path)
-            print("After Loading")
+            print("After Loading Model pickle file")
 #            data_scaled = preprocessor.transform(features)
             self.pred_df = features
-            preds = model.predict(self.pred_df)
+            self.preds_result = model.predict(np.array(self.pred_df))
 
             teamname = {1: 'Mumbai Indians', 2: 'Chennai Super Kings', 3: 'Kolkata Knight Riders', 4: 'Royal Challengers Bangalore',
                         5: 'Punjab Kings', 6: 'Rajasthan Royals', 7: 'Sunrisers Hyderabad', 8: 'Delhi Capitals', 9: 'Gujarat Titans', 10: 'Lucknow Super Giants'}
 
-            if (preds[0] == int(self.pred_df['team1'][0])) or (preds[0] == int(self.pred_df['team2'][0] )):
-                preds = teamname[preds[0]]
-                
+            if (self.preds_result[0] == int(self.pred_df['team1'][0])) or (self.preds_result[0] == int(self.pred_df['team2'][0])):
+                preds_name = teamname[self.preds_result[0]]
+                print(f"Prediction is correct {self.preds_result[0]}, {preds_name}")
             else:
-              #  print( f"Prediction is {teamname[preds[0]]}, while Team1: {teamname[self.pred_df['team1'][0]]} and Team2:{teamname[self.pred_df['team2'][0]]}. Prediction defaulted to Team2")
-                print(f"Prediction is wrong {preds[0]}")
-                preds = int(self.pred_df['team2'][0] )
-                preds = teamname[preds] + ' '
+                print(f"Prediction is wrong {self.preds_result[0]}, {teamname[self.preds_result[0]]}")
+              #  self.x = "team" + str(np.random.randint(1, 3))
+              #  preds_m = int(self.pred_df[self.x][0])
+                preds_m = int(self.pred_df['team1'][0] )
+                preds_name = teamname[preds_m] + '.'
             
-            return preds
+            return self.preds_result[0], preds_name
 
         except Exception as e:
             raise CustomException(e, sys)

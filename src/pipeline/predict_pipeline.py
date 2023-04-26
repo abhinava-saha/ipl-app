@@ -12,7 +12,7 @@ class PredictPipeline:
 
     def predict(self, features):
         try:
-            model_path = os.path.join("artifacts", "iplmodel_20Apr2023.pkl")
+            model_path = os.path.join("artifacts", "iplmodel_26Apr2023.pkl")
 #            preprocessor_path = os.path.join('artifacts', 'preprocessor.pkl')
             print("Before Loading Model pickle file")
             model = load_object(file_path=model_path)
